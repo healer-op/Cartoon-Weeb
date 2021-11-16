@@ -1,11 +1,3 @@
 #row{
     margin-bottom: 15vh;
 }
-#player_1{
-    margin-left: 28vw;
-}
-@media screen and (max-width: 967px) {
-    #player_1{
-        margin-left: 3vw;
-    }
-}
