@@ -8,10 +8,7 @@ fetch(`https://mapi.mrhealer.repl.co/tv/video/${name}`)
     }
     return response.json();})
 .then(data => {
-    jwplayer('player_1').setup({
-      file: data.link,
-      flashplayer:"//cdn.jsdelivr.net/jwplayer/5.10/player.swf"
-    });
+  var player = new Playerjs({id:"player", autoplay:"1", file:data.link});
 })
 
 
