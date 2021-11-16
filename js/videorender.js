@@ -1,5 +1,20 @@
 const params = new URLSearchParams(document.location.search);
 var name = params.get("link");
+
+fetch(`https://mapi.mrhealer.repl.co/tv/video/${name}`)
+.then(response =>{
+    if(!response.ok){
+        throw Error("ERROR");
+    }
+    return response.json();})
+.then(data => {
+    jwplayer('player_1').setup({
+      file: data.link,
+      flashplayer:"//cdn.jsdelivr.net/jwplayer/5.10/player.swf"
+    });
+})
+
+
 fetch(`https://mapi.mrhealer.repl.co/tv/${name}`)
 .then(response =>{
     if(!response.ok){
